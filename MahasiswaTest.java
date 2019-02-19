@@ -3,172 +3,178 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package main.java.id.ac.unpar.siamodels;
 
-import id.ac.unpar.siamodels.JadwalKuliah;
-import id.ac.unpar.siamodels.Mahasiswa;
-import id.ac.unpar.siamodels.Mahasiswa.Nilai;
-import id.ac.unpar.siamodels.MataKuliah;
-import id.ac.unpar.siamodels.Dosen;
-import id.ac.unpar.siamodels.TahunSemester;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.LocalDate;
-import java.time.Month;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.SortedMap;
-import java.util.TreeMap;
-
+import main.java.id.ac.unpar.siamodels.matakuliah.AIF101;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * NPM 2015730018
- * @author Hasan Abdurrahim Shiddiq
+ *
+ * @author lenovo
  */
 public class MahasiswaTest {
     
     /**
-     * Test case untuk menguji method getNama()
+     * Test of getNama method, of class Mahasiswa.
      */
     @Test
-    public void testCase1(){
-        Mahasiswa m = new Mahasiswa("2010310045");
-        m.setNama("Garfield");
-        String name = "Garfield";
-        assertEquals(name, "Garfield");
+    public void testGetNama() {
+        Mahasiswa instance = new Mahasiswa("2014730019");
+        instance.setNama("Michael Walah");
+        String expResult = "Michael Walah";
+        String result = instance.getNama();
+        assertEquals(expResult, result);
     }
-    
-    
+
     /**
-     * Test case untuk menguji method getNpm()
+     * Test of setNama method, of class Mahasiswa.
      */
     @Test
-    public void testCase2(){
-        Mahasiswa m = new Mahasiswa("2010310045");
-        String npm = "2010310045";
-        assertEquals(npm, "2010310045");
+    public void testSetNama() {
+        String nama = "Michael Walah";
+        Mahasiswa instance = new Mahasiswa("2014730019");
+        instance.setNama(nama);
     }
-    
+
     /**
-     * Test case untuk menguji method getPhotoPath()
+     * Test of getNpm method, of class Mahasiswa.
      */
     @Test
-    public void testCase3(){
-        Mahasiswa m = new Mahasiswa("2010310045");
-        String photoPath = "photo_path";
-        m.setPhotoPath("photo_path");
-        assertEquals(photoPath, m.getPhotoPath());
+    public void testGetNpm() {
+        Mahasiswa instance = new Mahasiswa("2014730019");
+        String expResult = "2014730019";
+        String result = instance.getNpm();
+        assertEquals(expResult, result);
     }
-    
+
     /**
-     * Test case untuk menguji method getJadwalKuliahList()
+     * Test of getPhotoURL method, of class Mahasiswa.
      */
     @Test
-    public void testCase4(){
-        Mahasiswa malthael = new Mahasiswa("2010310045");
-        List<JadwalKuliah> jkList = new ArrayList<JadwalKuliah>();
-        MataKuliah algoDasar = new MataKuliah("001", "algo 101", 3);
-        MataKuliah logikaKomp = new MataKuliah("003", "log komp", 3);
-        Dosen andiAF = new Dosen("andi a.f.", "20017320");
-        Dosen hilmanSN = new Dosen("hilman sn", "19997305");
-        
-        JadwalKuliah jk1 = new JadwalKuliah(algoDasar, 'a', andiAF, "rabu", "07.00-09.00", "09120");
-        JadwalKuliah jk2 = new JadwalKuliah(logikaKomp, 'b', hilmanSN, "selasa", "09.00-11.00", "09122");
-        
-        jkList.add(jk1);
-        jkList.add(jk2);     
-        malthael.setJadwalKuliahList(jkList);
-        
-        List<JadwalKuliah> jkListBenar = new ArrayList<JadwalKuliah>();
-        jkListBenar.add(jk1);
-        jkListBenar.add(jk2);
-        
-        assertEquals(jkListBenar, malthael.getJadwalKuliahList());
+    public void testGetPhotoURL() throws MalformedURLException {
+        Mahasiswa instance = new Mahasiswa("2010310045");
+        URL myURL = new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
+        instance.setPhotoURL(myURL);
+        URL expResult = instance.getPhotoURL();
+                //new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
+        URL result = instance.getPhotoURL();
+        assertEquals(expResult, result);
     }
-    
+
     /**
-     * Test case untuk menguji method getEmailAddress()
+     * Test of setPhotoURL method, of class Mahasiswa.
      */
     @Test
-    public void testCase5(){
-        Mahasiswa malthael = new Mahasiswa("2010310045");
-        String npmMalthael = "3110045@student.unpar.ac.id";
-        assertEquals(npmMalthael, malthael.getEmailAddress());
+    public void testSetPhotoURL() throws MalformedURLException {
+        URL photoURL = new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
+        Mahasiswa instance = new Mahasiswa("2010310045");
+        instance.setPhotoURL(photoURL);
     }
-    
+
     /**
-     * Test case untuk menguji method getEmailAddress() 2
+     * Test of calculateIPTempuh method, of class Mahasiswa.
      */
     @Test
-    public void testCase6(){
-        Mahasiswa samuel = new Mahasiswa("2017620017");
-        String npmSamuel = "2017620017@student.unpar.ac.id";
-        assertEquals(npmSamuel, samuel.getEmailAddress());
+    public void testCalculateIPTempuh() {
+        AIF101 kode = new AIF101();
+        boolean lulusSaja = false;
+        Mahasiswa instance = new Mahasiswa("2014730019");
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), new MataKuliah(kode.getKode(), kode.getNama(), 6) {
+        }, 'A', 85.60, 82.00, 83.25, 'A'));
+        double expResult = 4.0;
+        double result = instance.calculateIPTempuh(lulusSaja);
+        assertEquals(expResult, result, 0.0);
     }
-    
+
     /**
-     * Test case untuk menguji method getRiwayatNilai()
+     * Test of calculateIPKumulatif method, of class Mahasiswa.
      */
     @Test
-    public void testCase7(){
-        Mahasiswa malthael = new Mahasiswa("2010310045");
-        ArrayList<Nilai> cekNilaiMalthael = new ArrayList<>();
-        assertEquals(cekNilaiMalthael, malthael.getRiwayatNilai());
+    public void testCalculateIPKumulatif() {
+        Mahasiswa instance = null;
+        double expResult = 0.0;
+        double result = instance.calculateIPKumulatif();
+        assertEquals(expResult, result, 0.0);
     }
     
     /**
-     * Test case untuk menguji method getNilaiTOEFL()
+     * Test of calculateIPS method, of class Mahasiswa.
      */
     @Test
-    public void testCase8(){
-        Mahasiswa malthael = new Mahasiswa("2010310045");
-        SortedMap<LocalDate, Integer> toeflMalthael = new TreeMap<LocalDate, Integer>();
-        
-        LocalDate toeflMalthaelSatu = LocalDate.of(2012, Month.FEBRUARY, 5);
-        LocalDate toeflMalthaelDua = LocalDate.of(2011, Month.SEPTEMBER, 20);
-        
-        toeflMalthael.put(toeflMalthaelDua, 520);
-        toeflMalthael.put(toeflMalthaelSatu, 400);
-        
-        malthael.setNilaiTOEFL(toeflMalthael);
-        
-        SortedMap<LocalDate, Integer> cekTOEFLMalthael = new TreeMap<LocalDate, Integer>();
-        cekTOEFLMalthael.put(toeflMalthaelDua, 520);
-        cekTOEFLMalthael.put(toeflMalthaelSatu, 400);
-        
-        
-        assertEquals(cekTOEFLMalthael, malthael.getNilaiTOEFL());
+    public void testCalculateIPS() {
+        Mahasiswa instance = null;
+        double expResult = 0.0;
+        double result = instance.calculateIPS();
+        assertEquals(expResult, result, 0.0);
     }
     
     /**
-     * Test case untuk menguji method calculateIPLulus()
+     * Test of calculateSKSTempuh method, of class Mahasiswa.
      */
     @Test
-    public void testCase9(){
-        Mahasiswa malthael = new Mahasiswa("2010310045");
-        double belumAmbilMataKuliah = Double.NaN;
-        assertEquals(belumAmbilMataKuliah, malthael.calculateIPTempuh(false), 0);
+    public void testCalculateSKSTempuh() {
+        boolean lulusSaja = false;
+        Mahasiswa instance = null;
+        int expResult = 0;
+        int result = instance.calculateSKSTempuh(lulusSaja);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of calculateTahunSemesterAktif method, of class Mahasiswa.
+     */
+    @Test
+    public void testCalculateTahunSemesterAktif() {
+        Mahasiswa instance = null;
+        Set<TahunSemester> expResult = null;
+        Set<TahunSemester> result = instance.calculateTahunSemesterAktif();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of hasLulusKuliah method, of class Mahasiswa.
+     */
+    @Test
+    public void testHasLulusKuliah() {
+        String kodeMataKuliah = "";
+        Mahasiswa instance = null;
+        boolean expResult = false;
+        boolean result = instance.hasLulusKuliah(kodeMataKuliah);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of hasTempuhKuliah method, of class Mahasiswa.
+     */
+    @Test
+    public void testHasTempuhKuliah() {
+        String kodeMataKuliah = "";
+        Mahasiswa instance = null;
+        boolean expResult = false;
+        boolean result = instance.hasTempuhKuliah(kodeMataKuliah);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getTahunAngkatan method, of class Mahasiswa.
+     */
+    @Test
+    public void testGetTahunAngkatan() {
+        Mahasiswa instance = new Mahasiswa("2014730019");
+        int expResult = 2014;
+        int result = instance.getTahunAngkatan();
+        assertEquals(expResult, result);
     }
     
-    /**
-     * 
-     */
-    @Test
-    public void testCase10(){
-        TahunSemester tahun18Genap = new TahunSemester("182");
-        MataKuliah proyekInformatika = new MataKuliah("AIF302", "Proyek Informatika", 6);
-        String nilaiAkhirProyekInformatika = "100";
-        Nilai nilaiProyekIF = new Nilai(tahun18Genap, proyekInformatika, nilaiAkhirProyekInformatika);
-        
-        Mahasiswa malthael = new Mahasiswa("2010310045");
-        Mahasiswa.Nilai nilaiPKN = new Mahasiswa.Nilai(tahun18Genap, proyekInformatika, nilaiAkhirProyekInformatika);
-        //malthael.getRiwayatNilai().add(0, nilaiProyekIF);
-        double nilaiLulus = 4.0;
-        assertEquals(nilaiLulus, malthael.calculateIPTempuh(true), 100);
-        
-//        TahunSemester tahun18Genap = new TahunSemester("182");
-//        MataKuliah proyekInformatika = new MataKuliah("AIF302", "Proyek Informatika", 6);
-//        String nilaiAkhirProyekInformatika = "70";
-//        Nilai nilaiProyekIF = new Nilai(tahun18Genap, proyekInformatika, nilaiAkhirProyekInformatika);
-    }
 }
