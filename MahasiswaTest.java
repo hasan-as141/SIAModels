@@ -5,13 +5,17 @@
  */
 package main.java.id.ac.unpar.siamodels;
 
+import id.ac.unpar.siamodels.Mahasiswa;
+import id.ac.unpar.siamodels.MataKuliah;
+import id.ac.unpar.siamodels.Semester;
+import id.ac.unpar.siamodels.TahunSemester;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedMap;
-import main.java.id.ac.unpar.siamodels.matakuliah.AIF101;
+import id.ac.unpar.siamodels.matakuliah.AIF101;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -64,11 +68,10 @@ public class MahasiswaTest {
     @Test
     public void testGetPhotoURL() throws MalformedURLException {
         Mahasiswa instance = new Mahasiswa("2010310045");
-        URL myURL = new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
-        instance.setPhotoURL(myURL);
-        URL expResult = instance.getPhotoURL();
+        instance.setPhotoPath("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
+        String expResult = instance.getPhotoPath();
                 //new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
-        URL result = instance.getPhotoURL();
+        String result = instance.getPhotoPath();
         assertEquals(expResult, result);
     }
 
@@ -77,9 +80,8 @@ public class MahasiswaTest {
      */
     @Test
     public void testSetPhotoURL() throws MalformedURLException {
-        URL photoURL = new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
         Mahasiswa instance = new Mahasiswa("2010310045");
-        instance.setPhotoURL(photoURL);
+        instance.setPhotoPath("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
     }
 
     /**
