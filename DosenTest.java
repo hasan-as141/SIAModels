@@ -17,32 +17,12 @@ import static org.junit.Assert.*;
  * @author lenovo
  */
 public class DosenTest {
-    
-    public DosenTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of getNik method, of class Dosen.
      */
     @Test
     public void testGetNik() {
-        System.out.println("getNik");
         Dosen instance = new Dosen("119015", "Pascal");
         String expResult = "119015";
         String result = instance.getNik();
@@ -54,7 +34,6 @@ public class DosenTest {
      */
     @Test
     public void testSetNik() {
-        System.out.println("setNik");
         String nik = "119015";
         Dosen instance = new Dosen(nik, "Pascal");
         instance.setNik(nik);
@@ -65,7 +44,6 @@ public class DosenTest {
      */
     @Test
     public void testGetNama() {
-        System.out.println("getNama");
         Dosen instance = new Dosen("2015","rafael");
         String expResult = "rafael";
         String result = instance.getNama();
@@ -77,7 +55,6 @@ public class DosenTest {
      */
     @Test
     public void testSetNama() {
-        System.out.println("setNama");
         String nama = "Keenan";
         Dosen instance = new Dosen("140058", "Keenan");
         instance.setNama(nama);
@@ -88,10 +65,9 @@ public class DosenTest {
      */
     @Test
     public void testEquals() {
-        System.out.println("equals");
         Object obj = new Dosen("141401", "Keenan");
-        Dosen instance = new Dosen("121109", "Jhon");
-        boolean expResult = obj.equals(instance);
+        Dosen instance = new Dosen("141401", "Adi");
+        boolean expResult = true;
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
     }
