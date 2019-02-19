@@ -18,31 +18,11 @@ import static org.junit.Assert.*;
  */
 public class SemesterTest {
     
-    public SemesterTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     /**
      * Test of values method, of class Semester.
      */
     @Test
     public void testValues() {
-        System.out.println("values");
         Semester[] expResult = Semester.values();
         Semester[] result = Semester.values();
         assertArrayEquals(expResult, result);
@@ -53,7 +33,6 @@ public class SemesterTest {
      */
     @Test
     public void testValueOf() {
-        System.out.println("valueOf");
         String name = "GANJIL";
         Semester expResult = Semester.GANJIL;
         Semester result = Semester.valueOf(name);
@@ -65,7 +44,6 @@ public class SemesterTest {
      */
     @Test
     public void testFromString() {
-        System.out.println("fromString");
         String text = "GENAP";
         Semester expResult = Semester.GENAP;
         Semester result = Semester.fromString(text);
@@ -77,7 +55,6 @@ public class SemesterTest {
      */
     @Test
     public void testGetOrder() {
-        System.out.println("getOrder");
         Semester instance = Semester.fromString("GANJIL");
         int expResult = 20;
         int result = instance.getOrder();
