@@ -11,60 +11,25 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import main.java.id.ac.unpar.siamodels.matakuliah.*;
 
 /**
  *
- * @author User
+ * @author lenovo
  */
 public class MataKuliahFactoryTest {
     
-    public MataKuliahFactoryTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of getInstance method, of class MataKuliahFactory.
-     */
-     /**@Test
-    public void testGetInstance() {
-        System.out.println("getInstance");
-        MataKuliahFactory expResult = null;
-        MataKuliahFactory result = MataKuliahFactory.getInstance();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
-
     /**
      * Test of createMataKuliah method, of class MataKuliahFactory.
      */
     @Test
     public void testCreateMataKuliah_3args() {
-        System.out.println("createMataKuliah");
-        String kode = "AIF101";
+        AIF101 kode = new AIF101();
         int sks = 6;
-        String nama = "akang";
-        MataKuliahFactory instance = MataKuliahFactory.getInstance();
-        
-        MataKuliah result = instance.createMataKuliah(kode, sks, nama);
-        MataKuliah expResult = instance.createMataKuliah(kode);
+        MataKuliahFactory instance = new MataKuliahFactory();
+        MataKuliah result = instance.createMataKuliah(kode.getKode(), sks, kode.getNama());
+        MataKuliah expResult = instance.createMataKuliah("AIF101");
         assertEquals(expResult, result);
-        
         
     }
 
@@ -73,15 +38,12 @@ public class MataKuliahFactoryTest {
      */
     @Test
     public void testCreateMataKuliah_String() {
-        System.out.println("createMataKuliah");
-        String expResult = "AIF103";
-        String kode = "AIF103";
+        AIF101 kode = new AIF101();
         MataKuliahFactory instance = MataKuliahFactory.getInstance();
-        MataKuliah MK = instance.createMataKuliah(kode);
-        String result = MK.getKode();
-        
+        MataKuliah matkul = instance.createMataKuliah(kode.getKode());
+        MataKuliah expResult = matkul;
+        MataKuliah result = instance.createMataKuliah(kode.getKode());
         assertEquals(expResult, result);
         
     }
-    
 }
