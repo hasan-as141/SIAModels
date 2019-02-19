@@ -5,6 +5,7 @@
  */
 package main.java.id.ac.unpar.siamodels;
 
+import main.java.id.ac.unpar.siamodels.matakuliah.AIF101;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,36 +15,19 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author i15059
+ * @author lenovo
  */
 public class MataKuliahTest {
     
-    public MataKuliahTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     /**
      * Test of getKode method, of class MataKuliah.
      */
     @Test
     public void testGetKode() {
-        MataKuliah instance = new MataKuliah("AIF101","Pemrograman Berorientasi Objek",6);
-        String expResult = "AIF101";
+        AIF101 kode = new AIF101();
+        MataKuliahFactory instance2 = new MataKuliahFactory();
+        MataKuliah instance = instance2.createMataKuliah(kode.getKode());
+        String expResult = kode.getKode();
         String result = instance.getKode();
         assertEquals(expResult, result);
     }
@@ -53,8 +37,10 @@ public class MataKuliahTest {
      */
     @Test
     public void testGetNama() {
-        MataKuliah instance = new MataKuliah("AIF101","Pemrograman Berorientasi Objek",6);
-        String expResult = "Pemrograman Berorientasi Objek";
+        AIF101 kode = new AIF101();
+        MataKuliahFactory instance2 = new MataKuliahFactory();
+        MataKuliah instance = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
+        String expResult = kode.getNama();
         String result = instance.getNama();
         assertEquals(expResult, result);
     }
@@ -64,7 +50,9 @@ public class MataKuliahTest {
      */
     @Test
     public void testGetSks() {
-        MataKuliah instance = new MataKuliah("AIF101","Pemrograman Berorientasi Objek",6);
+        AIF101 kode = new AIF101();
+        MataKuliahFactory instance2 = new MataKuliahFactory();
+        MataKuliah instance = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
         Integer expResult = 6;
         Integer result = instance.getSks();
         assertEquals(expResult, result);
@@ -75,11 +63,13 @@ public class MataKuliahTest {
      */
     @Test
     public void testEquals() {
-        Object o = new MataKuliah("AIF101","Pemrograman Berorientasi Objek",6);
-        MataKuliah instance = new MataKuliah("AIF101","Pemrograman Berorientasi Objek",6);
+        AIF101 kode = new AIF101();
+        MataKuliahFactory instance2 = new MataKuliahFactory();
+        MataKuliahFactory instance3 = new MataKuliahFactory();
+        Object o = instance3.createMataKuliah(kode.getKode(), 6, kode.getNama());
+        MataKuliah instance = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
         boolean expResult = true;
         boolean result = instance.equals(o);
         assertEquals(expResult, result);
     }
-    
 }
