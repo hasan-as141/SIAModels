@@ -285,7 +285,6 @@ public class KelulusanTest {
         mahasiswa.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2019, Semester.GANJIL), instance101, "A"));
         
         int tempSKSLulus = mahasiswa.calculateSKSLulus();
-        System.out.println(tempSKSLulus);
         
         SortedMap<LocalDate, Integer> scoreTOEFL = new TreeMap<>();
         scoreTOEFL.put(LocalDate.of(2016, Month.JANUARY, 21), 620);
