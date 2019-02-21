@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.id.ac.unpar.siamodels;
+package id.ac.unpar.siamodels;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,7 +11,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import main.java.id.ac.unpar.siamodels.matakuliah.*;
+import id.ac.unpar.siamodels.matakuliah.*;
+import id.ac.unpar.siamodels.matakuliah.kurikulum2018.AIF131101;
 
 /**
  *
@@ -24,11 +25,11 @@ public class MataKuliahFactoryTest {
      */
     @Test
     public void testCreateMataKuliah_3args() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         int sks = 6;
         MataKuliahFactory instance = new MataKuliahFactory();
         MataKuliah result = instance.createMataKuliah(kode.getKode(), sks, kode.getNama());
-        MataKuliah expResult = instance.createMataKuliah("AIF101");
+        MataKuliah expResult = instance.createMataKuliah("AIF131101");
         assertEquals(expResult, result);
         
     }
@@ -38,7 +39,7 @@ public class MataKuliahFactoryTest {
      */
     @Test
     public void testCreateMataKuliah_String() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         MataKuliahFactory instance = MataKuliahFactory.getInstance();
         MataKuliah matkul = instance.createMataKuliah(kode.getKode());
         MataKuliah expResult = matkul;

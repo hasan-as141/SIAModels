@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.id.ac.unpar.siamodels;
+package id.ac.unpar.siamodels;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,9 +16,9 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.TreeSet;
-import main.java.id.ac.unpar.siamodels.matakuliah.AIF101;
-import main.java.id.ac.unpar.siamodels.Mahasiswa;
-import main.java.id.ac.unpar.siamodels.matakuliah.AIF102;
+import id.ac.unpar.siamodels.matakuliah.kurikulum2018.AIF131101;
+import id.ac.unpar.siamodels.Mahasiswa;
+import id.ac.unpar.siamodels.matakuliah.kurikulum2018.AIF131102;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -69,12 +69,12 @@ public class MahasiswaTest {
      * Test of getPhotoURL method, of class Mahasiswa.
      */
     @Test
-    public void testGetPhotoURL() throws MalformedURLException {
+    public void testGetPhotoPath() {
         Mahasiswa instance = new Mahasiswa("2014730019");
-        URL myURL = new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
-        instance.setPhotoURL(myURL);
-        URL expResult = instance.getPhotoURL();
-        URL result = instance.getPhotoURL();
+        String myURL = new String("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
+        instance.setPhotoPath(myURL);
+        String expResult = instance.getPhotoPath();
+        String result = instance.getPhotoPath();
         assertEquals(expResult, result);
     }
 
@@ -82,10 +82,10 @@ public class MahasiswaTest {
      * Test of setPhotoURL method, of class Mahasiswa.
      */
     @Test
-    public void testSetPhotoURL() throws MalformedURLException {
-        URL photoURL = new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
+    public void testSetPhotoPath() {
+        String photoURL = new String("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGfmUzzHKOTqKFkzC4gTRuUl5P5nP39Cti6KMLIdcyKOkwjuRHw");
         Mahasiswa instance = new Mahasiswa("2014730019");
-        instance.setPhotoURL(photoURL);
+        instance.setPhotoPath(photoURL);
     }
 
     /**
@@ -93,7 +93,7 @@ public class MahasiswaTest {
      */
     @Test
     public void testGetJadwalKuliahList() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
@@ -111,7 +111,7 @@ public class MahasiswaTest {
      */
     @Test
     public void testSetJadwalKuliahList() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         List<JadwalKuliah> jadwalKuliahList = new ArrayList<JadwalKuliah>();
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
@@ -137,11 +137,11 @@ public class MahasiswaTest {
      */
     @Test
     public void testGetRiwayatNilai() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
         Mahasiswa instance = new Mahasiswa("2014730019");
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GANJIL), instance3, 'A', 80.50, 87.50, 78.60, 'A'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GANJIL), instance3, "A"));
         List<Mahasiswa.Nilai> expResult = instance.getRiwayatNilai();
         List<Mahasiswa.Nilai> result = instance.getRiwayatNilai();
         assertEquals(expResult, result);
@@ -178,12 +178,12 @@ public class MahasiswaTest {
      */
     @Test
     public void testCalculateIPKLulus() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         boolean lulusSaja = true;
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
         instance.calculateIPTempuh(lulusSaja);
         double expResult = 4.0;
         double result = instance.calculateIPKLulus();
@@ -195,12 +195,12 @@ public class MahasiswaTest {
      */
     @Test
     public void testCalculateIPLulus() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         boolean lulusSaja = true;
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
         instance.calculateIPTempuh(lulusSaja);
         double expResult = 4.0;
         double result = instance.calculateIPLulus();
@@ -212,12 +212,12 @@ public class MahasiswaTest {
      */
     @Test
     public void testCalculateIPTempuh() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         boolean lulusSaja = true;
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
         double expResult = 4.0;
         double result = instance.calculateIPTempuh(lulusSaja);
         assertEquals(expResult, result, 0.0);
@@ -228,11 +228,11 @@ public class MahasiswaTest {
      */
     @Test
     public void testCalculateIPKumulatif() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
         double expResult = 4.0;
         double result = instance.calculateIPKumulatif();
         assertEquals(expResult, result, 0.0);
@@ -243,12 +243,12 @@ public class MahasiswaTest {
      */
     @Test
     public void testCalculateIPKTempuh() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         boolean lulusSaja = true;
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
         instance.calculateIPTempuh(lulusSaja);
         double expResult = 4.0;
         double result = instance.calculateIPKTempuh(lulusSaja);
@@ -260,12 +260,12 @@ public class MahasiswaTest {
      */
     @Test
     public void testCalculateIPS() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 60.85, 78.90, 63.80, 'C'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "C"));
         double expResult = 3.0;
         double result = instance.calculateIPS();
         assertEquals(expResult, result, 0.0);
@@ -276,15 +276,15 @@ public class MahasiswaTest {
      */
     @Test
     public void testCalculateSKSLulus() {
-        AIF101 kode =  new AIF101();
-        AIF102 kode2 = new AIF102();
+        AIF131101 kode =  new AIF131101();
+        AIF131102 kode2 = new AIF131102();
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
         MataKuliahFactory instance4 = new MataKuliahFactory();
         MataKuliah instance5 = instance4.createMataKuliah(kode2.getKode(), 4, kode2.getNama());
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance5, 'A', 60.85, 78.90, 63.80, 'C'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance5, "C"));
         int expResult = 10;
         int result = instance.calculateSKSLulus();
         assertEquals(expResult, result);
@@ -295,16 +295,16 @@ public class MahasiswaTest {
      */
     @Test
     public void testCalculateSKSTempuh() {
-        AIF101 kode =  new AIF101();
-        AIF102 kode2 = new AIF102();
+        AIF131101 kode =  new AIF131101();
+        AIF131102 kode2 = new AIF131102();
         boolean lulusSaja = true;
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
         MataKuliahFactory instance4 = new MataKuliahFactory();
         MataKuliah instance5 = instance4.createMataKuliah(kode2.getKode(), 4, kode2.getNama());
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance5, 'A', 60.85, 78.90, 63.80, 'C'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance5, "C"));
         int expResult = 10;
         int result = instance.calculateSKSTempuh(lulusSaja);
         assertEquals(expResult, result);
@@ -315,11 +315,11 @@ public class MahasiswaTest {
      */
     @Test
     public void testCalculateTahunSemesterAktif() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
         Set<TahunSemester> expResult = new TreeSet<>();
         expResult.add(new TahunSemester("182"));
         Set<TahunSemester> result = instance.calculateTahunSemesterAktif();
@@ -331,11 +331,11 @@ public class MahasiswaTest {
      */
     @Test
     public void testHasLulusKuliah() {
-        String kodeMataKuliah = "AIF101";
+        String kodeMataKuliah = "AIF131101";
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kodeMataKuliah, 6, "Pemrograman Berorientasi Objek");
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
         boolean expResult = true;
         boolean result = instance.hasLulusKuliah(kodeMataKuliah);
         assertEquals(expResult, result);
@@ -346,11 +346,11 @@ public class MahasiswaTest {
      */
     @Test
     public void testHasTempuhKuliah() {
-        String kodeMataKuliah = "AIF101";
+        String kodeMataKuliah = "AIF131101";
         Mahasiswa instance = new Mahasiswa("2014730019");
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance3 = instance2.createMataKuliah(kodeMataKuliah, 6, "Pemrograman Berorientasi Objek");
-        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, 'A', 85.60, 82.00, 83.25, 'A'));
+        instance.riwayatNilai.add(new Mahasiswa.Nilai(new TahunSemester(2018, Semester.GENAP), instance3, "A"));
         boolean expResult = true;
         boolean result = instance.hasTempuhKuliah(kodeMataKuliah);
         assertEquals(expResult, result);

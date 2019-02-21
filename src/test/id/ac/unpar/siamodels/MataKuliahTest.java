@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.id.ac.unpar.siamodels;
+package id.ac.unpar.siamodels;
 
-import main.java.id.ac.unpar.siamodels.matakuliah.AIF101;
+import id.ac.unpar.siamodels.matakuliah.kurikulum2018.AIF131101;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -24,7 +24,7 @@ public class MataKuliahTest {
      */
     @Test
     public void testGetKode() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance = instance2.createMataKuliah(kode.getKode());
         String expResult = kode.getKode();
@@ -37,7 +37,7 @@ public class MataKuliahTest {
      */
     @Test
     public void testGetNama() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
         String expResult = kode.getNama();
@@ -50,26 +50,11 @@ public class MataKuliahTest {
      */
     @Test
     public void testGetSks() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         MataKuliahFactory instance2 = new MataKuliahFactory();
         MataKuliah instance = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
         Integer expResult = 6;
         Integer result = instance.getSks();
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Test of equals method, of class MataKuliah.
-     */
-    @Test
-    public void testEquals() {
-        AIF101 kode = new AIF101();
-        MataKuliahFactory instance2 = new MataKuliahFactory();
-        MataKuliahFactory instance3 = new MataKuliahFactory();
-        Object o = instance3.createMataKuliah(kode.getKode(), 6, kode.getNama());
-        MataKuliah instance = instance2.createMataKuliah(kode.getKode(), 6, kode.getNama());
-        boolean expResult = true;
-        boolean result = instance.equals(o);
         assertEquals(expResult, result);
     }
 }

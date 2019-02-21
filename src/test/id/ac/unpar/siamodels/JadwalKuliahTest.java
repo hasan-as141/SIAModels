@@ -1,4 +1,4 @@
-package main.java.id.ac.unpar.siamodels;
+package id.ac.unpar.siamodels;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -9,8 +9,7 @@ package main.java.id.ac.unpar.siamodels;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
-import main.java.id.ac.unpar.siamodels.matakuliah.AIF101;
-import main.java.id.ac.unpar.siamodels.matakuliah.AIF102;
+import id.ac.unpar.siamodels.matakuliah.kurikulum2018.AIF131101;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,7 +28,7 @@ public class JadwalKuliahTest {
      */
     @Test
     public void testGetMataKuliah() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         Dosen pengajar = new Dosen("10560", "Keenan");
         MataKuliahFactory instance2 = MataKuliahFactory.getInstance();
         MataKuliah matkul = instance2.createMataKuliah(kode.getKode());
@@ -45,7 +44,7 @@ public class JadwalKuliahTest {
     @Test
     public void testSetMataKuliah() {
         MataKuliahFactory instance2 = MataKuliahFactory.getInstance();
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         MataKuliah mataKuliah = instance2.createMataKuliah(kode.getKode());
         JadwalKuliah instance = new JadwalKuliah();
         instance.setMataKuliah(mataKuliah);
@@ -56,7 +55,7 @@ public class JadwalKuliahTest {
      */
     @Test
     public void testGetKelas() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         Dosen pengajar = new Dosen("10560", "Keenan");
         MataKuliahFactory instance2 = MataKuliahFactory.getInstance();
         MataKuliah matkul = instance2.createMataKuliah(kode.getKode(), 6, "Pemrograman Berorientasi Objek");
@@ -81,7 +80,7 @@ public class JadwalKuliahTest {
      */
     @Test
     public void testGetHari() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         Dosen pengajar = new Dosen("10560", "Keenan");
         MataKuliahFactory instance2 = MataKuliahFactory.getInstance();
         MataKuliah matkul = instance2.createMataKuliah(kode.getKode(), 6, "Pemrograman Berorientasi Objek");
@@ -106,7 +105,7 @@ public class JadwalKuliahTest {
      */
     @Test
     public void testGetWaktuMulai() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         String waktu = "08:00-11:00";
         Dosen pengajar = new Dosen("10560", "Keenan");
         MataKuliahFactory instance2 = MataKuliahFactory.getInstance();
@@ -132,7 +131,7 @@ public class JadwalKuliahTest {
      */
     @Test
     public void testGetWaktuSelesai() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         String waktu = "08:00-11:00";
         Dosen pengajar = new Dosen("10560", "Keenan");
         MataKuliahFactory instance2 = MataKuliahFactory.getInstance();
@@ -158,7 +157,7 @@ public class JadwalKuliahTest {
      */
     @Test
     public void testGetLokasi() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         String waktu = "08:00-11:00";
         Dosen pengajar = new Dosen("10560", "Keenan");
         MataKuliahFactory instance2 = MataKuliahFactory.getInstance();
@@ -184,7 +183,7 @@ public class JadwalKuliahTest {
      */
     @Test
     public void testGetPengajar() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         String waktu = "08:00-11:00";
         Dosen pengajar = new Dosen("10560", "Keenan");
         MataKuliahFactory instance2 = MataKuliahFactory.getInstance();
@@ -210,7 +209,7 @@ public class JadwalKuliahTest {
      */
     @Test
     public void testGetWaktuString() {
-        AIF101 kode = new AIF101();
+        AIF131101 kode = new AIF131101();
         String waktu = "08:00-11:00";
         Dosen pengajar = new Dosen("10560", "Keenan");
         MataKuliahFactory instance2 = MataKuliahFactory.getInstance();

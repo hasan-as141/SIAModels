@@ -16,3 +16,6 @@ hs_err_pid*
 target/
 /.project
 /.classpath
+/nbproject/private/
+/build/
+/dist/
