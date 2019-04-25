@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 public class SemesterTest {
     
     /**
-     * Test of values method, of class Semester.
+     * Test untuk menguji value bilangan bulat dalam class Semester.
      */
     @Test
     public void testValues() {
@@ -29,7 +29,7 @@ public class SemesterTest {
     }
 
     /**
-     * Test of valueOf method, of class Semester.
+     * Test untuk menguji value dari String 'GANJIL' class Semester.
      */
     @Test
     public void testValueOf() {
@@ -40,7 +40,7 @@ public class SemesterTest {
     }
 
     /**
-     * Test of fromString method, of class Semester.
+     * Test untuk menguji value dari String 'GENAP' class Semester.
      */
     @Test
     public void testFromString() {
@@ -51,7 +51,7 @@ public class SemesterTest {
     }
 
     /**
-     * Test of getOrder method, of class Semester.
+     * Test untuk mendapatkan value order dalam' class Semester.
      */
     @Test
     public void testGetOrder() {
