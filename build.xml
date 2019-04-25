@@ -7,15 +7,22 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="SIAModels" default="default" basedir=".">
+<project name="SIAModels" default="default" basedir="." xmlns:jacoco="antlib:org.jacoco.ant">
     <description>Builds, tests, and runs the project SIAModels.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+	<property name="src.dir" value="src/test/id/ac/unpar/siamodels" />
+        
+	<path id="classpath">
+            <pathelement location="junit-4.12.jar" />
+            <fileset dir="${src.dir}">
+                    <include name="*.java" />    
+            </fileset>
+	</path>
     <!--
-
     There exist several targets which are by default empty and which can be 
     used for execution of your tasks. These targets are usually executed 
     before and after some main targets. They are: 
-
       -pre-init:                 called before initialization of project properties
       -post-init:                called after initialization of project properties
       -pre-compile:              called before javac compilation
@@ -29,24 +36,17 @@
       -pre-jar:                  called before JAR building
       -post-jar:                 called after JAR building
       -post-clean:               called after cleaning build products
-
     (Targets beginning with '-' are not intended to be called on their own.)
-
     Example of inserting an obfuscator after compilation could look like this:
-
         <target name="-post-compile">
             <obfuscate>
                 <fileset dir="${build.classes.dir}"/>
             </obfuscate>
         </target>
-
     For list of available properties check the imported 
     nbproject/build-impl.xml file. 
-
-
     Another way to customize the build is by overriding existing main targets.
     The targets of interest are: 
-
       -init-macrodef-javac:     defines macro for javac compilation
       -init-macrodef-junit:     defines macro for junit execution
       -init-macrodef-debug:     defines macro for class debugging
@@ -55,19 +55,60 @@
       run:                      execution of project 
       -javadoc-build:           Javadoc generation
       test-report:              JUnit report generation
-
     An example of overriding the target for project execution could look like this:
-
         <target name="run" depends="SIAModels-impl.jar">
             <exec dir="bin" executable="launcher.exe">
                 <arg file="${dist.jar}"/>
             </exec>
         </target>
-
     Notice that the overridden target depends on the jar target and not only on 
     the compile target as the regular run target does. Again, for a list of available 
     properties which you can use, check the target you are overriding in the
     nbproject/build-impl.xml file. 
-
     -->
+    
+    <target name="test_plan" description="Generate JavaDoc API docs">
+        <!-- TODO isi dengan membuatkan javadoc dari direktori src/test -->
+        <!-- caranya ada di nbproject/build-impl.xml, find dengan keyword 'javadoc' -->
+        <delete dir="build/test_plan/docs" failonerror="false" />
+        <mkdir dir="build/test_plan/docs"/>
+        <javadoc sourcepath="src/test"
+                 destdir="build/test_plan/docs" 
+                 classpathref="classpath"
+                 packagenames="id.ac.unpar.siamodels.*"  
+                 author="false" 
+                 private="true" version="true" 
+                 windowtitle="Simple Documentation">
+            <!--<packageset dir="src/id/ac/unpar/siamodels/test"/>-->
+            <packageset dir="src/test/id/ac/unpar/siamodels"/>
+            
+
+        </javadoc>
+    </target>
+    
+    
+    <target name="runtest">
+        <junit>
+            <test name="id.ac.unpar.siamodels"/>
+        </junit>
+    </target>
+    
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac destdir="build/classes" srcdir="src/main/java" includeAntRuntime="false"/>
+        <!--        <javac srcdir="src" destdir="build/classes"/>-->
+    </target>
+
+    <target name="test_report">
+        <!-- TODO cek http://ant.apache.org/manual/Tasks/junitreport.html -->
+        <mkdir dir="build/test_report"/>    
+            
+        <junitreport todir="build/test_report">
+            <fileset dir="./build/test/results"> <!--./build/test/results -->
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="build/test_report"/>
+        </junitreport>    
+    </target>
+
 </project>
