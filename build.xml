@@ -7,9 +7,18 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="SIAModels" default="default" basedir=".">
+<project name="SIAModels" default="default" basedir="." xmlns:jacoco="antlib:org.jacoco.ant">
     <description>Builds, tests, and runs the project SIAModels.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+	<property name="src.dir" value="src/test/id/ac/unpar/siamodels" />
+        
+	<path id="classpath">
+            <pathelement location="junit-4.12.jar" />
+            <fileset dir="${src.dir}">
+                    <include name="*.java" />    
+            </fileset>
+	</path>
     <!--
 
     There exist several targets which are by default empty and which can be 
@@ -70,4 +79,50 @@
     nbproject/build-impl.xml file. 
 
     -->
+    
+    <target name="test_plan" description="Generate JavaDoc API docs">
+        <!-- TODO isi dengan membuatkan javadoc dari direktori src/test -->
+        <!-- caranya ada di nbproject/build-impl.xml, find dengan keyword 'javadoc' -->
+        <delete dir="build/test_plan/docs" failonerror="false" />
+        <mkdir dir="build/test_plan/docs"/>
+        <javadoc sourcepath="src/test"
+                 destdir="build/test_plan/docs" 
+                 classpathref="classpath"
+                 packagenames="id.ac.unpar.siamodels.*"  
+                 author="false" 
+                 private="true" version="true" 
+                 windowtitle="Simple Documentation">
+            <packageset dir="src/test/id/ac/unpar/siamodels"/>
+            
+
+        </javadoc>
+    </target>
+    
+    
+    <target name="runtest">
+        <junit>
+            <test name="id.ac.unpar.siamodels"/>
+        </junit>
+    </target>
+    
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac destdir="build/classes" srcdir="src/main/java" includeAntRuntime="false"/>
+        <!--        <javac srcdir="src" destdir="build/classes"/>-->
+    </target>
+
+    <target name="test_report">
+        <!-- TODO cek http://ant.apache.org/manual/Tasks/junitreport.html -->
+        <mkdir dir="build/test_report"/>    
+            
+        <junitreport todir="build/test_report">
+            <fileset dir="./build/test/results"> <!--./build/test/results -->
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="build/test_report"/>
+        </junitreport>    
+    </target>
+
 </project>
+
+
