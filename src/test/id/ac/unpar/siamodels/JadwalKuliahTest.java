@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 public class JadwalKuliahTest {
     
     /**
-     * Test of getMataKuliah method, of class JadwalKuliah.
+     * Test untuk menguji data suatu mata kuliah yang ada di daftar mata kuliah
      */
     @Test
     public void testGetMataKuliah() {
@@ -39,7 +39,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of setMataKuliah method, of class JadwalKuliah.
+     * Test untuk menguji mata kuliah baru yang dibuat atau diubah
      */
     @Test
     public void testSetMataKuliah() {
@@ -51,7 +51,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of getKelas method, of class JadwalKuliah.
+     * Test untuk menguji data kelas yang 
      */
     @Test
     public void testGetKelas() {
@@ -66,7 +66,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of setKelas method, of class JadwalKuliah.
+     * Test untuk menguji kelas yang baru dibuat atau diubah
      */
     @Test
     public void testSetKelas() {
@@ -76,7 +76,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of getHari method, of class JadwalKuliah.
+     * Test untuk menguji jadwal hari pada suatu mata kuliah
      */
     @Test
     public void testGetHari() {
@@ -91,7 +91,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of setHari method, of class JadwalKuliah.
+     * Test untuk megatur hari pada sebuah mata kuliah
      */
     @Test
     public void testSetHari() {
@@ -101,7 +101,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of getWaktuMulai method, of class JadwalKuliah.
+     * Test untuk menguji waktu mulai pada sebuah mata kuliah
      */
     @Test
     public void testGetWaktuMulai() {
@@ -117,7 +117,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of setWaktuMulai method, of class JadwalKuliah.
+     * Test untuk mengatur dan mengubah waktu mulai sebuah mata kuliah
      */
     @Test
     public void testSetWaktuMulai() {
@@ -127,7 +127,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of getWaktuSelesai method, of class JadwalKuliah.
+     * Test untuk menguji waktu selesai pada sebuah mata kuliah
      */
     @Test
     public void testGetWaktuSelesai() {
@@ -143,7 +143,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of setWaktuSelesai method, of class JadwalKuliah.
+     * Test untuk mengatur dan mengubah waktu mulai sebuah mata kuliah
      */
     @Test
     public void testSetWaktuSelesai() {
@@ -153,7 +153,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of getLokasi method, of class JadwalKuliah.
+     * Test untuk menguji lokasi ruangan pada sebuah mata kuliah
      */
     @Test
     public void testGetLokasi() {
@@ -169,7 +169,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of setLokasi method, of class JadwalKuliah.
+     * Test untuk mengatur dan mengubah lokasi ruangan sebuah mata kuliah
      */
     @Test
     public void testSetLokasi() {
@@ -179,7 +179,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of getPengajar method, of class JadwalKuliah.
+     * Test untuk menguji data pengajar pada sebuah mata kuliah
      */
     @Test
     public void testGetPengajar() {
@@ -195,7 +195,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of setPengajar method, of class JadwalKuliah.
+     * Test untuk mengatur dan mengubah data pengajar sebuah mata kuliah 
      */
     @Test
     public void testSetPengajar() {
@@ -205,7 +205,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of getWaktuString method, of class JadwalKuliah.
+     * Test untuk menguji waktu jam pelajaran sebuah mata kuliah
      */
     @Test
     public void testGetWaktuString() {
@@ -221,7 +221,7 @@ public class JadwalKuliahTest {
     }
 
     /**
-     * Test of indonesianToDayOfWeek method, of class JadwalKuliah.
+     * Test utuk menguji dan mencocokkan sebuah hari dalam indonesia
      */
     @Test
     public void testIndonesianToDayOfWeek() {
