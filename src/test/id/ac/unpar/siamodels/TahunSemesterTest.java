@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 public class TahunSemesterTest {
     
     /**
-     * Test untuk mendapatkan object Semester dalam class TahunSemester.
+     * Test yang dilakukan untuk mendapatkan object Semester dalam class TahunSemester.
      */
     @Test
     public void testGetSemester() {
@@ -30,7 +30,7 @@ public class TahunSemesterTest {
     }
 
     /**
-     * Test untuk mendapatkan value tahun dalam class TahunSemester.
+     * Test yang dilakukan untuk mendapatkan value tahun dalam class TahunSemester.
      */
     @Test
     public void testGetTahun() {
@@ -41,7 +41,7 @@ public class TahunSemesterTest {
     }
 
     /**
-     * Test untuk mendapatkan value kode dps dalam class TahunSemester.
+     * Test yang dilakukan untuk mendapatkan value kode dps dalam class TahunSemester.
      */
     @Test
     public void testGetKodeDPS() {
@@ -52,7 +52,7 @@ public class TahunSemesterTest {
     }
 
     /**
-     * Test untuk mendapatkan value tahun akademik yang lebih besar dalam class TahunSemester.
+     * Test yang dilakukan untuk mendapatkan value tahun akademik yang lebih besar dalam class TahunSemester.
      */
     @Test
     public void testCompareTo() {
@@ -64,7 +64,7 @@ public class TahunSemesterTest {
     }
 
     /**
-     * Test untuk menentukan tahun semester jika berbeda dalam class TahunSemester..
+     * Test yang dilakukan untuk menentukan tahun semester jika berbeda dalam class TahunSemester..
      */
     @Test
     public void testEquals() {
@@ -76,7 +76,7 @@ public class TahunSemesterTest {
     }
 
     /**
-     * Test untuk mendapatkan value periode tahun akademik dalam class TahunSemester.
+     * Test yang dilakukan untuk mendapatkan value periode tahun akademik dalam class TahunSemester.
      */
     @Test
     public void testToString() {

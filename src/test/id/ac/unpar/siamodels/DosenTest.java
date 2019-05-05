@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 public class DosenTest {
 
     /**
-     * Test untuk menguji nik pada dosen
+     * Test yang dilakukan untuk mendapatkan nik seorang dosen
      */
     @Test
     public void testGetNik() {
@@ -30,7 +30,7 @@ public class DosenTest {
     }
 
     /**
-     * Test untuk mengatur dan mengubah nik pada dosen
+     * Test yang dilakukan untuk membuat atau mengubah nik seorang dosen
      */
     @Test
     public void testSetNik() {
@@ -40,7 +40,7 @@ public class DosenTest {
     }
 
     /**
-     * Test untuk menguji nama pada dosen
+     * Test yang dilakukan untuk mendapatkan nama seorang dosen
      */
     @Test
     public void testGetNama() {
@@ -51,7 +51,7 @@ public class DosenTest {
     }
 
     /**
-     * Test untuk mengatur dan mengubah nama dosen
+     * Test yang dilakukan untuk membuat atau mengubah nama dosen
      */
     @Test
     public void testSetNama() {
@@ -61,7 +61,7 @@ public class DosenTest {
     }
 
     /**
-     * Test untuk menguji dan membandingkan nik dan nama dosen
+     * Test yang dilakukan untuk menguji dan membandingkan nik dan nama seorang dosen
      */
     @Test
     public void testEquals() {

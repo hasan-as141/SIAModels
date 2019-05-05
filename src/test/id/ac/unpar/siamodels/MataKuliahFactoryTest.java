@@ -21,7 +21,8 @@ import id.ac.unpar.siamodels.matakuliah.kurikulum2018.AIF131101;
 public class MataKuliahFactoryTest {
     
     /**
-     * Test of createMataKuliah method, of class MataKuliahFactory.
+     * Test yang dilakukan untuk menguji pembuatan mata kuliah
+     * berdasarkan kode mata kuliah, jumlah sks mata kuliah tersebut, dan nama mata kuliah.
      */
     @Test
     public void testCreateMataKuliah_3args() {
@@ -35,7 +36,7 @@ public class MataKuliahFactoryTest {
     }
 
     /**
-     * Test of createMataKuliah method, of class MataKuliahFactory.
+     * Test yang dilakukan untuk menguji pembuatan mata kuliah hanya dengan menggunakan kode mata kuliah saja.
      */
     @Test
     public void testCreateMataKuliah_String() {

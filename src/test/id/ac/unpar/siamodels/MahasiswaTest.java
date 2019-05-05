@@ -33,7 +33,7 @@ import static org.junit.Assert.*;
 public class MahasiswaTest {
 
     /**
-     * Test of getNama method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji pengambilan data mahasiswa berdasarkan nama mahasiswa.
      */
     @Test
     public void testGetNama() {
@@ -45,7 +45,7 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of setNama method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji input data mahasiswa berdasarkan nama mahasiswa.
      */
     @Test
     public void testSetNama() {
@@ -55,7 +55,7 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of getNpm method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji pengambilan data mahasiswa berdasarkan npm mahasiswa.
      */
     @Test
     public void testGetNpm() {
@@ -66,7 +66,7 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of getPhotoURL method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji pengambilan foto mahasiswa.
      */
     @Test
     public void testGetPhotoPath() {
@@ -79,7 +79,7 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of setPhotoURL method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji input foto mahasiswa.
      */
     @Test
     public void testSetPhotoPath() {
@@ -89,7 +89,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of getJadwalKuliahList method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji pengambilan jadwal kuliah mahasiswa
+     * berdasarkan nama, kelas, npm, dosen, hari, jam, dan ruangan.
      */
     @Test
     public void testGetJadwalKuliahList() {
@@ -107,7 +108,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of setJadwalKuliahList method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji input jadwal kuliah mahasiswa
+     * berdasarkan nama, npm, kelas, dosen, hari, jam, dan ruangan.
      */
     @Test
     public void testSetJadwalKuliahList() {
@@ -122,7 +124,7 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of getEmailAddress method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji pengambilan data email mahasiswa.
      */
     @Test
     public void testGetEmailAddress() {
@@ -133,7 +135,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of getRiwayatNilai method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji pengambilan riwayat nilai dari mahasiswa
+     * berdasarkan tahun semester, kode mata kuliah, jumlah sks, nama mata kuliah dan nilai akhir.
      */
     @Test
     public void testGetRiwayatNilai() {
@@ -148,7 +151,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of getNilaiTOEFL method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji pengambilan nilai TOEFL seorang mahasiswa
+     * berdasarkan npm dan waktu saat ini,
      */
     @Test
     public void testGetNilaiTOEFL() {
@@ -163,7 +167,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of setNilaiTOEFL method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji input nilai TOEFL mahasiswa
+     * berdasarkan waktu saat ini dan npm mahasiswa.
      */
     @Test
     public void testSetNilaiTOEFL() {
@@ -174,7 +179,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of calculateIPKLulus method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji perhitungan ipk lulus dari seorang mahasiswa
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testCalculateIPKLulus() {
@@ -191,7 +197,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of calculateIPLulus method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji perhitungan ip lulus mahasiswa
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testCalculateIPLulus() {
@@ -208,7 +215,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of calculateIPTempuh method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji ip tempuh seorang mahasiswa
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester dan nilai akhir.
      */
     @Test
     public void testCalculateIPTempuh() {
@@ -224,7 +232,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of calculateIPKumulatif method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji perhitungan ipk kumulatif dari mahasiswa selama 1 semester
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testCalculateIPKumulatif() {
@@ -239,7 +248,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of calculateIPKTempuh method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji perhitungan ipk tempuh dari mahasiswa selama 1 semester
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testCalculateIPKTempuh() {
@@ -256,7 +266,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of calculateIPS method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji perhitungan ip sementara mahasiswa selama 1 semester.
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testCalculateIPS() {
@@ -272,7 +283,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of calculateSKSLulus method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji perhitungan sks lulus dari seorang mahasiswa
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testCalculateSKSLulus() {
@@ -291,7 +303,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of calculateSKSTempuh method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji perhitungan sks tempuh dari seorang mahasiswa selama 1 semester
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testCalculateSKSTempuh() {
@@ -311,7 +324,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of calculateTahunSemesterAktif method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji perhitungan tahun semester aktif bagi seorang mahasiswa
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testCalculateTahunSemesterAktif() {
@@ -327,7 +341,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of hasLulusKuliah method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji apakah seorang mahasiswa telah dinyatakan lulus terhadap 1 mata kuliah atau tidak
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testHasLulusKuliah() {
@@ -342,7 +357,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of hasTempuhKuliah method, of class Mahasiswa.
+     * Test yang dilakukan untuk menguji apakah seorang mahasiswa telah menepuh suatu mata kuliah
+     * berdasarkan npm mahasiswa, kode mata kuliah, sks mata kuliah, nama mata kuliah, tahun semester, dan nilai akhir.
      */
     @Test
     public void testHasTempuhKuliah() {
@@ -357,7 +373,8 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of getTahunAngkatan method, of class Mahasiswa.
+     * Test yang dilakukan untuk mendapatkan tahun angkatan dari seorang mahasiswa
+     * berdasarkan npm mahasiswa yang diambil 4 digit terdepan.
      */
     @Test
     public void testGetTahunAngkatan() {
@@ -368,7 +385,7 @@ public class MahasiswaTest {
     }
 
     /**
-     * Test of toString method, of class Mahasiswa.
+     * Test yang dilakukan untuk mendapatkan npm dan nama dari seorang mahasiswa.
      */
     @Test
     public void testToString() {

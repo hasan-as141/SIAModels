@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 public class MataKuliahTest {
     
     /**
-     * Test of getKode method, of class MataKuliah.
+     * Test yang dilakukan untuk mendapatkan kode suatu mata kuliah.
      */
     @Test
     public void testGetKode() {
@@ -33,7 +33,7 @@ public class MataKuliahTest {
     }
 
     /**
-     * Test of getNama method, of class MataKuliah.
+     * Test yang dilakukan untuk mendapatkan nama dari mata kuliah.
      */
     @Test
     public void testGetNama() {
@@ -46,7 +46,7 @@ public class MataKuliahTest {
     }
 
     /**
-     * Test of getSks method, of class MataKuliah.
+     * Test yang dilakukan untuk menguji sks dari suatu mata kuliah.
      */
     @Test
     public void testGetSks() {

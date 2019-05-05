@@ -28,7 +28,8 @@ import static org.junit.Assert.*;
 public class KelulusanTest {
     
     /**
-     * Test of checkPrasyarat method, of class Kelulusan.
+     * Test yang dilakukan untuk mengecek apakah mahasiswa layak untuk lulus atau tidak
+     * berdasarkan mata kuliah yang diambil dan total jumlah sks.
      */
     @Test
     public void testCheckPrasyarat() {
